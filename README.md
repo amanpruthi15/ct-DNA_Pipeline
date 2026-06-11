@@ -30,7 +30,7 @@ Set up your project workspace matching the architecture expected by the wrapper 
 │   └── CF0201110_S4_R2_001.fastq.gz
 ├── config.yaml                        # Pipeline parameter and tool path config
 ├── 2024-11-04_cfDNA_Val2_Sample.txt   # Tab-delimited sample tracker index file
-├── pipeline_runner.py                 # Core Master Orchestrator
+├── ctDNA_pipeline_runner.py           # Core Master Orchestrator
 ├── step1_trimming.py
 ├── step2_fastq_to_bam.py
 ├── step3_umi_align_consensus.py
