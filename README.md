@@ -36,3 +36,49 @@ Set up your project workspace matching the architecture expected by the wrapper 
 ├── step3_umi_align_consensus.py
 ├── step4_base_recaliberation.py
 └── step5_variant_calling.py
+```
+---
+
+## Prerequisite
+```text
+Python 3
+PyYAML
+fgbio (v3.1.2)
+GATK (Genome Analysis Toolkit v4.3.0.0)
+BWA (Burrows-Wheeler Aligner)
+Samtools
+Picard
+FreeBayes
+BCFtool
+bgzip
+tabix
+Ensembl VEP (Variant Effect Predictor)
+```
+---
+
+## Usage & Execution
+
+Because the master orchestrator script manages live, persistent cluster querying loops, you should run it inside a continuous terminal multiplexer environment (such as `screen` or `tmux`). This guarantees that your analysis pipeline won't crash or stall if your local machine drops its SSH network connection.
+
+### Launching via `screen` (Recommended)
+
+1. **Start a new detached screen session:**
+   ```bash
+   screen -S ctdna_pipeline
+   ```
+2. **Navigate to your root project workspace:**
+ ```bash
+  cd /path/to/your/scripts/
+   ```
+3. **Execute the pipeline runner:**
+ ```bash
+  python pipeline_runner.py /path/to/workdir sample-info.txtconfig.yaml
+   ```
+  Detach from your screen safely: Press Ctrl + A, then hit D. The master wrapper script will continue executing cleanly in the background on the cluster log-in node. Re-attach to monitor live progress anytime:
+ ```bash
+  screen -r cfdna_pipeline
+   ```
+4. **To follow global infrastructure steps from an external terminal terminal window, use:**
+ ```bash
+  tail -f /path/to/workdir/pipeline_*.log
+   ```
