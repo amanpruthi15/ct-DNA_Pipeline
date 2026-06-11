@@ -4,7 +4,7 @@ An automated, orchestrator-driven genomic analysis pipeline developed for high-t
 
 ## Pipeline Architecture & Features
 
-The pipeline is split into 5 modular execution layers coordinated by a centralized runtime orchestrator (`pipeline_runner.py`):
+The pipeline is split into 5 modular execution layers coordinated by a centralized runtime orchestrator (`ctDNA_pipeline_runner.py`):
 
 1. **Step 1: Read Trimming (`step1_trimming.py`)** Uses Trimmomatic for adapter clipping, base-quality filtering, and sliding-window read pruning. Supports automatic lane merging for dual-lane datasets.
 2. **Step 2: Fastq to BAM Alignment (`step2_fastq_to_bam.py`)** Converts raw FASTQ records into unmapped BAM files while preserving UMI structures via `fgbio`, followed by initial alignment using `bwa mem`.
