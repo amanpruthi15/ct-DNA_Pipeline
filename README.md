@@ -72,9 +72,9 @@ Because the master orchestrator script manages live, persistent cluster querying
    ```
 3. **Execute the pipeline runner:**
  ```bash
-  python pipeline_runner.py /path/to/workdir sample-info.txtconfig.yaml
+  python pipeline_runner.py /path/to/workdir sample-info.txt config.yaml
    ```
-  Detach from your screen safely: Press Ctrl + A, then hit D. The master wrapper script will continue executing cleanly in the background on the cluster log-in node. Re-attach to monitor live progress anytime:
+  Detach from your screen safely: Press Ctrl + A, then hit D. The master wrapper script will continue executing in the background on the cluster log-in node. Re-attach to monitor live progress anytime:
  ```bash
   screen -r cfdna_pipeline
    ```
